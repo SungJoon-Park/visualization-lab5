@@ -88,6 +88,7 @@ function update(data, type, sorting) {
         .attr('width', d => xScale.bandwidth())
         .attr('height', d => (height - yScale(d[type])))
         .attr('fill', '#0066CC');
+        
     bars
         .exit()
         .remove();
