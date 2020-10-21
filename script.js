@@ -79,6 +79,7 @@ function update(data, type, sorting) {
     bars
         .enter()
         .append('rect')
+        .attr('y',height)
         .merge(bars)
         .transition()
         .duration(1000)
@@ -86,7 +87,7 @@ function update(data, type, sorting) {
         .attr('y', d => yScale(d[type]))
         .attr('width', d => xScale.bandwidth())
         .attr('height', d => (height - yScale(d[type])))
-        .attr('fill', 'steelblue');
+        .attr('fill', 'blue');
     bars
         .exit()
         .remove();
@@ -99,6 +100,8 @@ function update(data, type, sorting) {
         .call(xAxis);
 
     yDisplay
+        .transition()
+        .duration(1000)
         .call(yAxis);
 
     yLabel
@@ -130,7 +133,7 @@ d3.csv('coffee-house-chains.csv', d3.autoType).then(data => {
     // (Later) Handling the sorting direction change
     d3.select('#button')
         .on('click', e => {
-            sorting = -1 * sorting; 
+            sorting *= -1;
             update(data, type, sorting);
         });
 });
