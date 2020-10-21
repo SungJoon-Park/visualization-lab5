@@ -79,7 +79,7 @@ function update(data, type, sorting) {
     bars
         .enter()
         .append('rect')
-        .attr('y',height)
+        .attr('y', height)
         .merge(bars)
         .transition()
         .duration(1000)
@@ -87,7 +87,7 @@ function update(data, type, sorting) {
         .attr('y', d => yScale(d[type]))
         .attr('width', d => xScale.bandwidth())
         .attr('height', d => (height - yScale(d[type])))
-        .attr('fill', 'blue');
+        .attr('fill', '#0066CC');
     bars
         .exit()
         .remove();
@@ -96,15 +96,17 @@ function update(data, type, sorting) {
     xDisplay
         .attr("transform", `translate(0, ${height})`)
         .transition()
-        .duration(1000)
+        .duration(500)
         .call(xAxis);
 
     yDisplay
         .transition()
-        .duration(1000)
+        .duration(500)
         .call(yAxis);
 
     yLabel
+        .transition()
+        .duration(500)
         .text(() => {
                 if (type == 'stores') {
                     return 'Stores';

@@ -1,28 +1,32 @@
-h1{
-    color: blue;
-    font-style:italic;
+h1 {
+    color: #0066CC;
+    font-style: italic;
     font-size: 50px;
 }
 
-h3{
-    font-size:20px;
+h3 {
+    font-size: 20px;
 }
 
-.filter{
-    display:flex;
-    margin-left:20px;
-    text-align:center;
+.filter {
+    display: flex;
+    margin-left: 20px;
+    text-align: center;
 }
 
 #group-by {
     width: 25%;
-    display:flex;
-    margin-left:10px;
+    display: flex;
+    margin-left: 10px;
 }
 
-#button{
+.form label {
+    padding-top: 5px;
+}
+
+#button {
     background-color: white;
-    color:purple;
+    color: purple;
     outline-color: purple;
-    margin-left:20px;
+    margin-left: 20px;
 }
